@@ -8,16 +8,19 @@
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: yellow;
+    background-color: wheat;
+    
   }
   
   .grid div {
     height: 20px;
     width: 20px;
+    /* border: 1px solid white; */
   }
   
   .tetromino {
     background-color: blue;
+    /* border: 1px solid white; */
   }
   
   

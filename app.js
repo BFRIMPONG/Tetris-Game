@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
         timerId = null
       } else {
         draw()
-        timerId = setInterval(moveDown, 10 00)
+        timerId = setInterval(moveDown, 1000)
         nextRandom = Math.floor(Math.random()*theTetrominoes.length)
         displayShape()
       }
