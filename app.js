@@ -207,7 +207,18 @@ document.addEventListener('DOMContentLoaded', () => {
         displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom]
       })
     }
-  
+    function apply() {
+      let levelOption = document.getElementById('level');
+      let i = levelOption.selectedIndex;
+      let level = levelOption.options[i].value;
+      console.log(level);
+    }
+
+    const levelButton = document.getElementById('apply');
+    console.log(levelButton);
+    levelButton.addEventListener('click', apply);
+
+
     //add functionality to the button
     startBtn.addEventListener('click', () => {
       if (timerId) {
@@ -215,7 +226,19 @@ document.addEventListener('DOMContentLoaded', () => {
         timerId = null
       } else {
         draw()
-        timerId = setInterval(moveDown, 1000)
+
+          // implementing the level
+        if(level.value == "1"){
+          timerId = setInterval(moveDown, 800)
+        }
+        else if(level.value == "2"){
+          timerId = setInterval(moveDown, 300)
+        }
+        else if(level.value == "3"){
+          timerId = setInterval(moveDown, 80)
+        }
+          // timerId = setInterval(moveDown, 1000)
+        // timerId = setInterval(moveDown, 1000)
         nextRandom = Math.floor(Math.random()*theTetrominoes.length)
         displayShape()
       }
